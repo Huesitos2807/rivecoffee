@@ -1,0 +1,103 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 30 15% 97%; /* Crema de Leche F7EFE1 */
+        --foreground: 10 30% 10%; /* Carbón Negro (approx for text) */
+        --card: 30 15% 97%;
+        --card-foreground: 10 30% 10%;
+        --popover: 30 15% 97%;
+        --popover-foreground: 10 30% 10%;
+        --primary: 7 31% 23%; /* Espresso Brown 4B2E2B */
+        --primary-foreground: 30 15% 97%; /* Crema de Leche */
+        --secondary: 40 65% 56%; /* Aguardiente Gold D9A441 */
+        --secondary-foreground: 7 31% 23%; /* Espresso Brown */
+        --muted: 30 10% 85%;
+        --muted-foreground: 10 10% 45%;
+        --accent: 330 53% 22%; /* Vino Tinto 541B3D */
+        --accent-foreground: 30 15% 97%; /* Crema de Leche */
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 30 10% 80%;
+        --input: 30 10% 80%;
+        --ring: 7 31% 23%;
+        --radius: 0.75rem; /* Slightly increased radius for a softer feel */
+      }
+
+      .dark {
+        /* Define dark mode colors if needed, for now we use light mode */
+        --background: 10 30% 12%; /* Carbón Negro 1E1E1E */
+        --foreground: 30 15% 90%; /* Crema de Leche (approx for text) */
+        --card: 10 30% 12%;
+        --card-foreground: 30 15% 90%;
+        --popover: 10 30% 12%;
+        --popover-foreground: 30 15% 90%;
+        --primary: 40 65% 56%; /* Aguardiente Gold */
+        --primary-foreground: 10 30% 12%; /* Carbón Negro */
+        --secondary: 7 31% 23%; /* Espresso Brown */
+        --secondary-foreground: 30 15% 90%; /* Crema de Leche */
+        --muted: 10 10% 25%;
+        --muted-foreground: 30 10% 65%;
+        --accent: 90 43% 33%; /* Verde Seca 566E3D */
+        --accent-foreground: 30 15% 90%; /* Crema de Leche */
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 10 10% 30%;
+        --input: 10 10% 30%;
+        --ring: 40 65% 56%;
+      }
+    }
+
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-background text-foreground;
+        font-family: 'Playfair Display', serif; /* Using Google Font */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        @apply font-serifElegant; /* Tailwind custom font family */
+      }
+      .font-manuscrita {
+        font-family: 'Dancing Script', cursive; /* Using Google Font */
+      }
+      .font-serifElegant {
+        font-family: 'Playfair Display', serif;
+      }
+    }
+
+    /* Custom scrollbar for a more elegant feel */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--background) / 0.3);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--primary) / 0.6);
+      border-radius: 10px;
+      border: 2px solid hsl(var(--background) / 0.3);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary));
+    }
+
+    /* Adding a subtle texture to the background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="20" height="20"><path fill="%234B2E2B" fill-opacity="0.02" d="M0 0h40v40H0zM40 40h40v40H40z"></path></svg>');
+      opacity: 0.5;
+      z-index: -1;
+    }
